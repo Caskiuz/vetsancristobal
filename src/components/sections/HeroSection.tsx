@@ -11,6 +11,15 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[100svh] pt-24 pb-12 sm:pt-32 sm:pb-20 overflow-hidden flex items-center bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+      {/* Background SVG Image */}
+      <div className="absolute inset-0 pointer-events-none opacity-30 dark:opacity-20">
+        <img
+          src={b.heroBgImage}
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ backgroundColor: `${b.colors.primary}15` }} />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none" style={{ backgroundColor: `${b.colors.secondary}10` }} />

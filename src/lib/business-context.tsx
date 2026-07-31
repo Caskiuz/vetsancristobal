@@ -82,6 +82,7 @@ export interface BusinessTemplate {
     rating: number;
     text: string;
   }[];
+  heroBgImage: string;
   features: {
     hasBooking: boolean;
     hasBlog: boolean;
@@ -130,6 +131,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
       { name: "María Alejandra Torres", pet: "Rocky (Pitbull)", rating: 5, text: "Desde que vamos a VetSanCristóbal, Rocky dejó de tener miedo al veterinario." },
       { name: "José Gregorio Molina", pet: "Pancho (Loro Real)", rating: 5, text: "Pensé que nadie atendía loros en San Cristóbal hasta que los encontré." },
     ],
+    heroBgImage: "/images/hero-bg-veterinaria.svg",
     features: { hasBooking: true, hasBlog: true, hasEmergency: true, blogTitle: "Blog de Salud Animal", blogDescription: "Consejos de salud preventiva para tu mascota." },
     navLinks: [
       { href: "/#servicios", label: "Servicios" },
@@ -176,6 +178,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
       { name: "Juan Carlos Pereira", pet: "Ama de casa", rating: 5, text: "Los BBQ Packs son perfectos para los domingos familiares. ¡Recomendadísimo!" },
       { name: "Luisa Contreras", pet: "Cliente nuevo", rating: 5, text: "Pedí delivery y en 30 minutos tenía la carne en mi casa. Increíble servicio." },
     ],
+    heroBgImage: "/images/hero-bg-carniceria.svg",
     features: { hasBooking: false, hasBlog: true, hasEmergency: true, blogTitle: "Recetas y Tips de Cocina", blogDescription: "Recetas, consejos de cocina y tips para asados perfectos." },
     navLinks: [
       { href: "/#servicios", label: "Cortes" },
@@ -221,6 +224,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
       { name: "Pedro José Ramírez", pet: "Contratista", rating: 5, text: "Cotización rápida por WhatsApp. Me entregaron los materiales en la obra al día siguiente." },
       { name: "Luisana Fernández", pet: "Cliente nuevo", rating: 5, text: "Excelente atención. Me ayudaron a elegir la pintura correcta para mi casa." },
     ],
+    heroBgImage: "/images/hero-bg-ferreteria.svg",
     features: { hasBooking: false, hasBlog: true, hasEmergency: true, blogTitle: "Tips de Construcción y Bricolaje", blogDescription: "Consejos prácticos para reparaciones, construcción y proyectos DIY." },
     navLinks: [
       { href: "/#servicios", label: "Productos" },
