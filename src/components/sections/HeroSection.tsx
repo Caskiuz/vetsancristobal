@@ -39,7 +39,12 @@ export function HeroSection() {
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08] px-2 sm:px-0">
               {b.hero.headline}{" "}
-              <span className="text-gradient">{b.hero.headlineHighlight}</span>.
+              <span style={{ 
+                background: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, 
+                WebkitBackgroundClip: "text", 
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text"
+              } as React.CSSProperties}>{b.hero.headlineHighlight}</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
