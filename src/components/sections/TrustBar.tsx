@@ -3,30 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Award, Heart, Users, Star } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
-
-const trustStats = [
-  {
-    icon: Heart,
-    value: `${SITE_CONFIG.stats.petsServed.toLocaleString("es-VE")}+`,
-    label: "Mascotas Atendidas",
-  },
-  {
-    icon: Award,
-    value: `${SITE_CONFIG.stats.yearsExperience}+`,
-    label: "Años de Experiencia",
-  },
-  {
-    icon: Star,
-    value: `${SITE_CONFIG.stats.googleRating}/5`,
-    label: "Calificación Google",
-  },
-  {
-    icon: Users,
-    value: `${SITE_CONFIG.stats.googleReviews}+`,
-    label: "Reseñas Reales",
-  },
-];
+import { useSiteConfig } from "@/lib/site-data";
 
 const certifications = [
   { name: "Fear Free", description: "Certified Professional" },
@@ -36,6 +13,14 @@ const certifications = [
 ];
 
 export function TrustBar() {
+  const cfg = useSiteConfig();
+
+  const trustStats = [
+    { icon: Heart, value: `${cfg.stats.petsServed.toLocaleString("es-VE")}+`, label: "Mascotas Atendidas" },
+    { icon: Award, value: `${cfg.stats.yearsExperience}+`, label: "Años de Experiencia" },
+    { icon: Star, value: `${cfg.stats.googleRating}/5`, label: "Calificación Google" },
+    { icon: Users, value: `${cfg.stats.googleReviews}+`, label: "Reseñas Reales" },
+  ];
   return (
     <section className="relative py-12 sm:py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800/40 overflow-hidden transition-colors duration-300">
       {/* Background subtle glow */}

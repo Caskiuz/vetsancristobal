@@ -18,6 +18,7 @@ export function useSiteConfig(): SiteConfig {
       email: SITE_CONFIG.email,
       address: { ...SITE_CONFIG.address },
       schedule: { ...SITE_CONFIG.schedule },
+      stats: { ...SITE_CONFIG.stats },
     };
   }
 }

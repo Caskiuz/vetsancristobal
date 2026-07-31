@@ -23,6 +23,7 @@ import {
   Mail,
   MapPin,
   Clock,
+  Star,
 } from "lucide-react";
 import { useAdmin, Service, Vet, Testimonial } from "@/lib/admin-context";
 import { useTheme } from "@/lib/theme-context";
@@ -224,6 +225,28 @@ function TabInfo({ config, onUpdate, onSave }: { config: any; onUpdate: any; onS
         <Field label="Sábados" value={form.schedule.saturday} onChange={(v) => handleChange("schedule.saturday", v)} />
         <Field label="Emergencias" value={form.schedule.emergency} onChange={(v) => handleChange("schedule.emergency", v)} />
       </Section>
+      <Section title="Estadísticas" icon={Star}>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">Mascotas Atendidas</label>
+            <input type="number" value={form.stats?.petsServed ?? 0} onChange={(e) => handleChange("stats.petsServed", e.target.value)} className="input-field" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">Años de Experiencia</label>
+            <input type="number" value={form.stats?.yearsExperience ?? 0} onChange={(e) => handleChange("stats.yearsExperience", e.target.value)} className="input-field" />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">Rating Google (ej: 4.9)</label>
+            <input type="number" step="0.1" value={form.stats?.googleRating ?? 0} onChange={(e) => handleChange("stats.googleRating", e.target.value)} className="input-field" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">Cantidad de Reseñas</label>
+            <input type="number" value={form.stats?.googleReviews ?? 0} onChange={(e) => handleChange("stats.googleReviews", e.target.value)} className="input-field" />
+          </div>
+        </div>
+      </Section>
       <button onClick={handleSave} className="btn-primary w-full sm:w-auto px-8 py-3"><Save className="w-4 h-4" /> Guardar Cambios</button>
     </motion.div>
   );
@@ -264,7 +287,6 @@ function TabServices({ services, onUpdate, onSave }: { services: Service[]; onUp
             <Field label="Icono (lucide)" value={item.icon} onChange={(v) => updateItem(item.id, "icon", v)} />
             <Field label="Rango de Precio" value={item.priceRange} onChange={(v) => updateItem(item.id, "priceRange", v)} />
           </div>
-          <Field label="Color (Tailwind gradient)" value={item.color} onChange={(v) => updateItem(item.id, "color", v)} />
         </div>
       ))}
       <div className="flex gap-3">

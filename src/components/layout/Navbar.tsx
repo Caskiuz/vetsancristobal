@@ -14,8 +14,8 @@ import {
   Moon,
 } from "lucide-react";
 import { useTheme } from "@/lib/theme-context";
+import { useSiteConfig } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
-import { SITE_CONFIG } from "@/lib/constants";
 
 const NAV_LINKS = [
   { href: "/#servicios", label: "Servicios" },
@@ -27,6 +27,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const cfg = useSiteConfig();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -82,7 +83,7 @@ export function Navbar() {
                   VET<span style={{ color: '#0D9488' }}>SAN</span>CRISTÓBAL
                 </span>
                 <span className="text-[9px] sm:text-[10px] tracking-[0.15em] uppercase font-semibold" style={{ color: 'var(--text-muted)' }}>
-                  {SITE_CONFIG.tagline}
+                  {cfg.tagline}
                 </span>
               </div>
             </Link>
@@ -113,7 +114,7 @@ export function Navbar() {
               </button>
 
               <motion.a
-                href={`https://wa.me/${SITE_CONFIG.phone.replace(/\D/g, "")}?text=${encodeURIComponent("¡URGENTE! 🚨 Necesito atención veterinaria de emergencia.")}`}
+                href={`https://wa.me/${cfg.phone.replace(/\D/g, "")}?text=${encodeURIComponent("¡URGENTE! 🚨 Necesito atención veterinaria de emergencia.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
@@ -203,7 +204,7 @@ export function Navbar() {
             {/* CTAs */}
             <div className="px-4 py-5 space-y-3 border-t border-slate-200 dark:border-slate-800">
               <a
-                href={`https://wa.me/${SITE_CONFIG.phone.replace(/\D/g, "")}?text=${encodeURIComponent("¡URGENTE! 🚨 Necesito atención veterinaria de emergencia.")}`}
+                href={`https://wa.me/${cfg.phone.replace(/\D/g, "")}?text=${encodeURIComponent("¡URGENTE! 🚨 Necesito atención veterinaria de emergencia.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}

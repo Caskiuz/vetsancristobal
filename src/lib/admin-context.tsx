@@ -22,6 +22,12 @@ export interface SiteConfig {
     saturday: string;
     emergency: string;
   };
+  stats: {
+    petsServed: number;
+    yearsExperience: number;
+    googleRating: number;
+    googleReviews: number;
+  };
 }
 
 export interface Service {
@@ -78,6 +84,7 @@ const defaultData: AdminData = {
     email: SITE_CONFIG.email,
     address: { ...SITE_CONFIG.address },
     schedule: { ...SITE_CONFIG.schedule },
+    stats: { ...SITE_CONFIG.stats },
   },
   services: SERVICES.map((s) => ({ ...s })),
   vets: VETS.map((v) => ({ ...v, certifications: [...v.certifications] })),
