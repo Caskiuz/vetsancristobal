@@ -1,74 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
   <defs>
-    <pattern id="tools" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-      <!-- Wrench -->
-      <path d="M30 50 L45 65 M30 50c-5-5-5-12 0-17s12-5 17 0" stroke="#EA580C" stroke-width="1" stroke-linecap="round" opacity="0.1"/>
-      <circle cx="40" cy="55" r="6" stroke="#EA580C" stroke-width="1" opacity="0.08"/>
-      <!-- Hammer -->
-      <rect x="130" y="80" width="18" height="8" rx="2" fill="#EA580C" opacity="0.07" transform="rotate(-30 139 84)"/>
-      <line x1="139" y1="88" x2="145" y2="115" stroke="#EA580C" stroke-width="2" stroke-linecap="round" opacity="0.08" transform="rotate(-30 139 84)"/>
-      <!-- Screw -->
-      <circle cx="80" cy="150" r="4" fill="#EA580C" opacity="0.06"/>
-      <line x1="77" y1="150" x2="83" y2="150" stroke="#EA580C" stroke-width="1" opacity="0.06"/>
+    <pattern id="tools2" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M30 50 L45 65 M30 50c-5-5-5-12 0-17s12-5 17 0" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+      <circle cx="40" cy="55" r="7" stroke="#EA580C" stroke-width="1.5" opacity="0.20"/>
+      <rect x="130" y="80" width="20" height="9" rx="2" fill="#EA580C" opacity="0.18" transform="rotate(-30 140 84)"/>
+      <line x1="140" y1="89" x2="148" y2="118" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round" opacity="0.20" transform="rotate(-30 140 84)"/>
+      <circle cx="80" cy="150" r="5" fill="#EA580C" opacity="0.15"/>
+      <line x1="75" y1="150" x2="85" y2="150" stroke="#EA580C" stroke-width="1.5" opacity="0.15"/>
     </pattern>
-    <pattern id="bricks" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="76" height="18" rx="3" stroke="#EA580C" stroke-width="0.5" opacity="0.05"/>
-      <rect x="38" y="20" width="38" height="18" rx="3" stroke="#EA580C" stroke-width="0.5" opacity="0.04"/>
+    <pattern id="bricks2" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="74" height="17" rx="3" stroke="#EA580C" stroke-width="1" opacity="0.14"/>
+      <rect x="38" y="20" width="38" height="17" rx="3" stroke="#EA580C" stroke-width="1" opacity="0.10"/>
     </pattern>
-    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-      <circle cx="30" cy="30" r="1.5" fill="#F97316" opacity="0.06"/>
-    </pattern>
-    <linearGradient id="ferreGrad1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#EA580C" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#64748B" stop-opacity="0.04"/>
+    <linearGradient id="ferreGradA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EA580C" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#64748B" stop-opacity="0.06"/>
     </linearGradient>
-    <linearGradient id="ferreGrad2" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F97316" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.02"/>
+    <linearGradient id="ferreGradB" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.03"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#ferreGrad1)"/>
-  <rect width="1200" height="800" fill="url(#ferreGrad2)"/>
-  <rect width="1200" height="800" fill="url(#tools)"/>
-  <rect width="1200" height="800" fill="url(#bricks)"/>
-  <rect width="1200" height="800" fill="url(#grid)"/>
-  <!-- House blueprint style -->
-  <g opacity="0.05" transform="translate(800, 100)">
-    <rect x="50" y="100" width="200" height="180" stroke="#EA580C" stroke-width="2" fill="none"/>
-    <line x1="50" y1="100" x2="150" y2="20" stroke="#EA580C" stroke-width="2"/>
-    <line x1="250" y1="100" x2="150" y2="20" stroke="#EA580C" stroke-width="2"/>
-    <rect x="100" y="170" width="50" height="60" stroke="#EA580C" stroke-width="1.5" fill="none" rx="3"/>
-    <rect x="180" y="140" width="40" height="40" stroke="#EA580C" stroke-width="1.5" fill="none" rx="2"/>
-    <rect x="200" y="200" width="40" height="60" stroke="#EA580C" stroke-width="1.5" fill="none" rx="3"/>
-    <circle cx="218" cy="230" r="4" fill="#EA580C"/>
-    <rect x="60" y="250" width="180" height="20" stroke="#EA580C" stroke-width="1" fill="none" rx="2"/>
-    <line x1="80" y1="20" x2="80" y2="60" stroke="#EA580C" stroke-width="1"/>
-    <line x1="220" y1="20" x2="220" y2="60" stroke="#EA580C" stroke-width="1"/>
+  <rect width="1200" height="800" fill="url(#ferreGradA)"/>
+  <rect width="1200" height="800" fill="url(#ferreGradB)"/>
+  <rect width="1200" height="800" fill="url(#tools2)"/>
+  <rect width="1200" height="800" fill="url(#bricks2)"/>
+  <!-- House blueprint -->
+  <g opacity="0.12" transform="translate(820, 80)">
+    <rect x="50" y="100" width="220" height="200" stroke="#EA580C" stroke-width="2.5" fill="none"/>
+    <line x1="50" y1="100" x2="160" y2="15" stroke="#EA580C" stroke-width="2.5"/>
+    <line x1="270" y1="100" x2="160" y2="15" stroke="#EA580C" stroke-width="2.5"/>
+    <rect x="105" y="175" width="55" height="68" stroke="#EA580C" stroke-width="2" fill="none" rx="4"/>
+    <circle cx="140" cy="210" r="5" fill="#EA580C"/>
+    <rect x="195" y="150" width="45" height="45" stroke="#EA580C" stroke-width="2" fill="none" rx="3"/>
+    <rect x="215" y="215" width="45" height="68" stroke="#EA580C" stroke-width="2" fill="none" rx="4"/>
+    <circle cx="237" cy="250" r="5" fill="#EA580C"/>
+    <rect x="65" y="270" width="195" height="22" stroke="#EA580C" stroke-width="1.5" fill="none" rx="3"/>
+    <line x1="85" y1="15" x2="85" y2="58" stroke="#EA580C" stroke-width="1.5"/>
+    <line x1="235" y1="15" x2="235" y2="58" stroke="#EA580C" stroke-width="1.5"/>
   </g>
   <!-- Pipe/plumbing -->
-  <g opacity="0.06">
-    <rect x="60" y="500" width="8" height="200" rx="4" fill="#64748B"/>
-    <rect x="60" y="600" width="80" height="8" rx="4" fill="#64748B"/>
-    <circle cx="140" cy="604" r="6" stroke="#64748B" stroke-width="2" fill="none"/>
-    <circle cx="64" cy="604" r="4" fill="#64748B"/>
+  <g opacity="0.14">
+    <rect x="60" y="480" width="10" height="220" rx="5" fill="#64748B"/>
+    <rect x="60" y="590" width="90" height="10" rx="5" fill="#64748B"/>
+    <circle cx="150" cy="595" r="8" stroke="#64748B" stroke-width="3" fill="none"/>
+    <circle cx="65" cy="595" r="5" fill="#64748B"/>
   </g>
-  <!-- Electrical circuit lines -->
-  <g opacity="0.05">
-    <path d="M400 500 L500 500 L500 600 L600 600 L600 520 L700 520" stroke="#EA580C" stroke-width="1.5" fill="none"/>
-    <circle cx="400" cy="500" r="4" fill="#EA580C"/>
-    <circle cx="700" cy="520" r="4" fill="#EA580C"/>
-    <circle cx="550" cy="550" r="3" fill="#F97316"/>
+  <!-- Electrical circuit -->
+  <g opacity="0.12">
+    <path d="M380 500 L520 500 L520 620 L640 620 L640 530 L740 530" stroke="#EA580C" stroke-width="2" fill="none"/>
+    <circle cx="380" cy="500" r="5" fill="#EA580C"/>
+    <circle cx="740" cy="530" r="5" fill="#EA580C"/>
+    <circle cx="580" cy="560" r="4" fill="#F97316"/>
   </g>
-  <!-- Measurement marks -->
-  <g opacity="0.04" transform="translate(300, 650)">
-    <line x1="0" y1="0" x2="200" y2="0" stroke="#64748B" stroke-width="1.5"/>
-    <line x1="0" y1="0" x2="0" y2="10" stroke="#64748B" stroke-width="1.5"/>
-    <line x1="50" y1="0" x2="50" y2="6" stroke="#64748B" stroke-width="1"/>
-    <line x1="100" y1="0" x2="100" y2="10" stroke="#64748B" stroke-width="1.5"/>
-    <line x1="150" y1="0" x2="150" y2="6" stroke="#64748B" stroke-width="1"/>
-    <line x1="200" y1="0" x2="200" y2="10" stroke="#64748B" stroke-width="1.5"/>
-    <text x="45" y="-4" font-family="Arial" font-size="10" fill="#64748B">50</text>
-    <text x="95" y="-4" font-family="Arial" font-size="10" fill="#64748B">100</text>
-    <text x="145" y="-4" font-family="Arial" font-size="10" fill="#64748B">150</text>
+  <!-- Measurement ruler -->
+  <g opacity="0.10" transform="translate(280, 660)">
+    <line x1="0" y1="0" x2="240" y2="0" stroke="#64748B" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="12" stroke="#64748B" stroke-width="2"/>
+    <line x1="60" y1="0" x2="60" y2="8" stroke="#64748B" stroke-width="1.5"/>
+    <line x1="120" y1="0" x2="120" y2="12" stroke="#64748B" stroke-width="2"/>
+    <line x1="180" y1="0" x2="180" y2="8" stroke="#64748B" stroke-width="1.5"/>
+    <line x1="240" y1="0" x2="240" y2="12" stroke="#64748B" stroke-width="2"/>
   </g>
 </svg>

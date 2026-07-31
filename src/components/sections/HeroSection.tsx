@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[100svh] pt-24 pb-12 sm:pt-32 sm:pb-20 overflow-hidden flex items-center bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
       {/* Background SVG Image */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 dark:opacity-20">
+      <div className="absolute inset-0 pointer-events-none opacity-70 dark:opacity-40 z-0">
         <img
           src={b.heroBgImage}
           alt=""
@@ -20,9 +20,9 @@ export function HeroSection() {
           aria-hidden="true"
         />
       </div>
-      <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none" style={{ backgroundColor: `${b.colors.primary}15` }} />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none" style={{ backgroundColor: `${b.colors.secondary}10` }} />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none z-0" style={{ backgroundColor: `${b.colors.primary}08` }} />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0" style={{ backgroundColor: `${b.colors.secondary}06` }} />
       <motion.div animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full" style={{ backgroundColor: b.colors.primaryLight }} />
       <motion.div animate={{ y: [0, -15, 0], opacity: [0.2, 0.5, 0.2] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }} className="absolute top-1/3 left-1/3 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: b.colors.secondaryLight }} />
       <motion.div animate={{ y: [0, -25, 0], opacity: [0.2, 0.7, 0.2] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 0.5 }} className="absolute bottom-1/3 left-1/4 w-2.5 h-2.5 rounded-full" style={{ backgroundColor: b.colors.accentLight }} />
