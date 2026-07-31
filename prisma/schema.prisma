@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Species {
+  CANINO
+  FELINO
+  EXOTICO
+  OTRO
+}
+
+enum AppointmentStatus {
+  PENDIENTE
+  CONFIRMADA
+  CANCELADA
+  COMPLETADA
+}
+
+enum PaymentMethod {
+  PAGO_MOVIL
+  DIVISAS_USD
+  PESOS_COP
+  PUNTO_DE_VENTA
+}
+
+model Owner {
+  id         String        @id @default(uuid())
+  fullName   String
+  phone      String
+  email      String?
+  identityId String?
+  pets       Pet[]
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model Pet {
+  id           String        @id @default(uuid())
+  name         String
+  species      Species
+  breed        String?
+  ageYears     Int?
+  ownerId      String
+  owner        Owner         @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  appointments Appointment[]
+  createdAt    DateTime      @default(now())
+}
+
+model Appointment {
+  id            String            @id @default(uuid())
+  petId         String
+  pet           Pet               @relation(fields: [petId], references: [id], onDelete: Cascade)
+  reason        String
+  scheduledAt   DateTime
+  status        AppointmentStatus @default(PENDIENTE)
+  paymentMethod PaymentMethod?
+  notes         String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now())
+}
