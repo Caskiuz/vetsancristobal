@@ -9,9 +9,21 @@ import {
   Microscope,
   Bird,
   Syringe,
+  Beef,
+  ChefHat,
+  Truck,
+  Flame,
+  HardHat,
+  Wrench,
+  Droplets,
+  Zap,
+  PaintBucket,
+  Lock,
   ArrowRight,
+  MessageCircle,
 } from "lucide-react";
 import { useSiteServices } from "@/lib/site-data";
+import { useBusiness } from "@/lib/business-context";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -21,42 +33,38 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Microscope,
   Bird,
   Syringe,
+  Beef,
+  ChefHat,
+  Truck,
+  Flame,
+  HardHat,
+  Wrench,
+  Droplets,
+  Zap,
+  PaintBucket,
+  Lock,
 };
 
 export function ServicesGrid() {
   const services = useSiteServices();
+  const { businessData: b } = useBusiness();
 
   return (
     <section id="servicios" className="relative section-container bg-white dark:bg-slate-950 transition-colors duration-300">
-      {/* Section Header */}
       <div className="text-center mb-14">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-block text-teal-400 text-sm font-bold uppercase tracking-widest mb-3"
-        >
+        <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="inline-block text-sm font-bold uppercase tracking-widest mb-3" style={{ color: b.colors.primary }}>
           Nuestros Servicios
         </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="section-title text-slate-900 dark:text-white"
-        >
-          Todo el cuidado que tu{" "}
-          <span className="text-gradient">mascota necesita</span>
+        <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+          className="section-title text-slate-900 dark:text-white">
+          {b.id === "veterinaria" ? (<>Todo el cuidado que tu <span className="text-gradient">mascota necesita</span></>)
+            : b.id === "carniceria" ? (<>La mejor <span className="text-gradient">carne de la ciudad</span></>)
+            : (<>Todo lo que necesitas para <span className="text-gradient">construir</span></>)}
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="section-subtitle"
-        >
-          Desde medicina preventiva hasta cirugías especializadas, cubrimos cada
-          etapa de la vida de tu compañero.
+        <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+          className="section-subtitle">
+          {b.description}
         </motion.p>
       </div>
 
@@ -87,7 +95,10 @@ export function ServicesGrid() {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 transition-colors"
+                style={{ color: "inherit" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = b.colors.primary; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = ""; }}>
                 {service.title}
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-1">
@@ -96,19 +107,36 @@ export function ServicesGrid() {
 
               {/* Price + Link */}
               <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800/50 flex items-center justify-between">
-                <span className="text-xs font-semibold text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded-lg">
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-lg" style={{ color: b.colors.primary, backgroundColor: `${b.colors.primary}15` }}>
                   {service.priceRange}
                 </span>
-                <button
-                  className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 dark:text-slate-500 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors"
-                  aria-label={`Agendar ${service.title}`}
-                  onClick={() => {
-                    document.getElementById("reservar")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  <span>Reservar</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                {b.features.hasBooking ? (
+                  <button
+                    className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 dark:text-slate-500 transition-colors"
+                    style={{ color: "inherit" } as React.CSSProperties}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = b.colors.primary; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = ""; }}
+                    aria-label={`Agendar ${service.title}`}
+                    onClick={() => {
+                      document.getElementById("reservar")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    <span>Reservar</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                ) : (
+                  <a
+                    href={`https://wa.me/${b.phone.replace(/\D/g, "")}?text=${encodeURIComponent(`Hola! Me interesa: ${service.title} — ${service.priceRange}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs font-semibold transition-colors"
+                    style={{ color: b.colors.primary }}
+                    aria-label={`Consultar ${service.title} por WhatsApp`}
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Consultar</span>
+                  </a>
+                )}
               </div>
             </motion.div>
           );

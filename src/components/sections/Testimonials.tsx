@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useSiteTestimonials } from "@/lib/site-data";
+import { useBusiness } from "@/lib/business-context";
 
 export function Testimonials() {
   const testimonials = useSiteTestimonials();
+  const { businessData: b } = useBusiness();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevious = () => {
@@ -21,7 +23,7 @@ export function Testimonials() {
 
   return (
     <section id="testimonios" className="relative section-container bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ backgroundColor: `${b.colors.primary}0D` }} />
       <div className="relative z-10">
         <div className="text-center mb-14">
           <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -34,7 +36,7 @@ export function Testimonials() {
 
         <div className="max-w-3xl mx-auto">
           <div className="relative glass-card p-8 sm:p-10 md:p-12">
-            <Quote className="absolute top-6 left-6 w-10 h-10 text-teal-500/10" />
+            <Quote className="absolute top-6 left-6 w-10 h-10" style={{ color: `${b.colors.primary}10` }} />
             <AnimatePresence mode="wait">
               <motion.div key={currentIndex} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.3 }} className="text-center space-y-5">
@@ -48,7 +50,7 @@ export function Testimonials() {
                 </p>
                 <div className="pt-2">
                   <p className="text-slate-900 dark:text-white font-bold">{testimonials[currentIndex]?.name}</p>
-                  <p className="text-sm text-teal-400">{testimonials[currentIndex]?.pet}</p>
+                  <p className="text-sm" style={{ color: b.colors.primary }}>{testimonials[currentIndex]?.pet}</p>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -58,7 +60,8 @@ export function Testimonials() {
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, index) => (
               <button key={index} onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-teal-500 w-8" : "bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"}`}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8" : "bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"}`}
+                style={index === currentIndex ? { backgroundColor: b.colors.primary } : undefined}
                 aria-label={`Ir al testimonio ${index + 1}`} />
             ))}
           </div>

@@ -3,6 +3,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { generateLocalBusinessSchema, generateWebSiteSchema } from "@/lib/schema-markup";
 import { ThemeProvider } from "@/lib/theme-context";
 import { AdminProvider } from "@/lib/admin-context";
+import { BusinessProvider } from "@/lib/business-context";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/layout/WhatsAppCTA";
@@ -94,12 +95,14 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <BusinessProvider>
           <AdminProvider>
             <Navbar />
             <main>{children}</main>
             <Footer />
             <WhatsAppCTA />
           </AdminProvider>
+          </BusinessProvider>
         </ThemeProvider>
       </body>
     </html>
