@@ -25,6 +25,7 @@ import {
 import { useSiteServices } from "@/lib/site-data";
 import { useBusiness } from "@/lib/business-context";
 import { cn } from "@/lib/utils";
+import { Icons8Image, ICONS8_SERVICE_IMAGES } from "@/components/ui/Icons8Image";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Stethoscope,
@@ -82,7 +83,7 @@ export function ServicesGrid() {
               whileHover={{ y: -6 }}
               className="glass-card-hover group cursor-pointer p-6 sm:p-7 flex flex-col"
             >
-              {/* Illustration */}
+              {/* Illustration — SVG first, Icons8 fallback, then gradient */}
               <div className="mb-5 flex justify-center">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
                   {service.illustration ? (
@@ -91,6 +92,14 @@ export function ServicesGrid() {
                       alt={service.title}
                       className="w-full h-full object-contain"
                       loading="lazy"
+                    />
+                  ) : ICONS8_SERVICE_IMAGES[service.id] ? (
+                    <Icons8Image
+                      icon={ICONS8_SERVICE_IMAGES[service.id].icon}
+                      style={ICONS8_SERVICE_IMAGES[service.id].style as "fluency" | "color"}
+                      size={112}
+                      alt={service.title}
+                      className="w-full h-full object-contain"
                     />
                   ) : (
                     <div className={cn("w-full h-full bg-gradient-to-br flex items-center justify-center", service.color)}>
