@@ -1,14 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { SITE_CONFIG, SERVICES, VETS } from "@/lib/constants";
 
-const apiKey = process.env.GEMINI_API_KEY;
-
-if (!apiKey) {
-  throw new Error("GEMINI_API_KEY no está configurada en .env.local");
-}
-
-const genAI = new GoogleGenerativeAI(apiKey);
-
 const SYSTEM_PROMPT = `Eres **VetBot**, el asistente virtual amigable y profesional de **${SITE_CONFIG.fullName}** (${SITE_CONFIG.name}), una clínica veterinaria ubicada en ${SITE_CONFIG.address.street}, ${SITE_CONFIG.address.city}, ${SITE_CONFIG.address.state}, ${SITE_CONFIG.address.country}.
 
 ## Tu Personalidad
@@ -61,25 +53,41 @@ Cuando un cliente quiera agendar una cita:
 
 export const GEMINI_MODEL = "gemini-2.5-flash";
 
-export const model = genAI.getGenerativeModel({
-  model: GEMINI_MODEL,
-  systemInstruction: SYSTEM_PROMPT,
-});
-
 export interface ChatMessage {
   role: "user" | "model";
   content: string;
+}
+
+function getGenAIClient(): GoogleGenerativeAI {
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey || apiKey.trim() === "") {
+    throw new Error(
+      "GEMINI_API_KEY no está configurada. Agrégala en .env.local (desarrollo) o en Settings > Environment Variables de Vercel (producción)."
+    );
+  }
+
+  return new GoogleGenerativeAI(apiKey);
 }
 
 export async function sendChatMessage(
   history: ChatMessage[],
   newMessage: string
 ): Promise<string> {
+  const genAI = getGenAIClient();
+
+  const model = genAI.getGenerativeModel({
+    model: GEMINI_MODEL,
+    systemInstruction: SYSTEM_PROMPT,
+  });
+
   const chat = model.startChat({
-    history: history.map((msg) => ({
-      role: msg.role,
-      parts: [{ text: msg.content }],
-    })),
+    history: history
+      .filter((msg) => msg.content && msg.content.trim() !== "")
+      .map((msg) => ({
+        role: msg.role,
+        parts: [{ text: msg.content }],
+      })),
   });
 
   const result = await chat.sendMessage(newMessage);

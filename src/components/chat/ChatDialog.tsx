@@ -53,7 +53,7 @@ export function ChatDialog({
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
     }
-  }, [isOpen, messages.length]);
+  }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -75,7 +75,10 @@ export function ChatDialog({
     setIsLoading(true);
 
     try {
-      const history = messages.map((msg) => ({
+      // No incluir el mensaje de bienvenida (id="welcome") en el historial
+      // porque no fue generado por Gemini y causaría errores en la API
+      const conversationMessages = messages.filter((msg) => msg.id !== "welcome");
+      const history = conversationMessages.map((msg) => ({
         role: msg.role,
         content: msg.content,
       }));
@@ -107,15 +110,8 @@ export function ChatDialog({
           ? err.message
           : "Error al conectar con el asistente";
       setError(errorMessage);
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: (Date.now() + 2).toString(),
-          role: "model",
-          content:
-            "Lo siento, tuve un problema al procesar tu mensaje. ¿Podrías intentarlo de nuevo? Si el problema persiste, puedes contactarnos directamente por WhatsApp al +58 426-2931869.",
-        },
-      ]);
+      // NO agregar mensaje de error automático para evitar duplicados
+      // con el error banner que ya se muestra
     } finally {
       setIsLoading(false);
     }
