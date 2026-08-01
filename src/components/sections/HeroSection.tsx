@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Phone, CheckCircle2, Star, ShieldCheck, MapPin } from "lucide-react";
+import { LordIcon } from "@/components/ui/LordIcon";
 import { useBusiness } from "@/lib/business-context";
 
 export function HeroSection() {
@@ -87,9 +88,17 @@ export function HeroSection() {
                 <div><p className="text-[11px] font-bold text-slate-900 dark:text-white">{b.features.hasBooking ? "Disponible Ahora" : "Pedidos Abiertos"}</p><p className="text-[9px] text-slate-500 dark:text-slate-400">Atención inmediata activa</p></div>
               </motion.div>
 
-              {/* Business Icon Hero */}
-              <div className="w-full h-full flex items-center justify-center p-2 sm:p-4 text-8xl">
-                <motion.span animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3 }}>{b.emoji}</motion.span>
+              {/* Business Icon Hero — Animated Lordicon */}
+              <div className="w-full h-full flex items-center justify-center p-2 sm:p-4">
+                <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3 }}>
+                  <LordIcon
+                    src={b.lordiconSrc}
+                    trigger="loop"
+                    colors={`primary:${b.colors.primary},secondary:${b.colors.secondary}`}
+                    size={120}
+                    stroke="light"
+                  />
+                </motion.div>
               </div>
 
               <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg flex items-center justify-between z-20 gap-2 flex-wrap">

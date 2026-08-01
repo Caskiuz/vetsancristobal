@@ -51,6 +51,7 @@ export interface BusinessTemplate {
     emergencyDark: string;
   };
   logoIcon: string;
+  lordiconSrc: string;
   hero: {
     badge: string;
     headline: string;
@@ -111,6 +112,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     stats: { primaryValue: 5000, primaryLabel: "Mascotas Atendidas", secondaryValue: 15, secondaryLabel: "Años de Experiencia", ratingValue: 4.9, ratingLabel: "Calificación Google", reviewsValue: 320, reviewsLabel: "Reseñas Reales" },
     colors: { primary: "#0D9488", primaryDark: "#0F766E", primaryLight: "#5EEAD4", secondary: "#14B8A6", secondaryDark: "#0F766E", secondaryLight: "#99F6E4", accent: "#06B6D4", accentDark: "#0891B2", accentLight: "#67E8F9", emergency: "#DC2626", emergencyDark: "#991B1B" },
     logoIcon: "Stethoscope",
+    lordiconSrc: "https://cdn.lordicon.com/drtetgog.json",
     hero: { badge: "Atención Veterinaria Avanzada en San Cristóbal, Táchira", headline: "Cuidamos a tu mascota con la", headlineHighlight: "precisión médica", subtitle: "Desde consultas preventivas hasta cirugías complejas y urgencias 24 horas.", ctaEmergency: "WhatsApp Emergencia (24/7)", ctaEmergencyShort: "WHATSAPP EMERGENCIA", emergencyWhatsAppMessage: "¡URGENTE! 🚨 Necesito atención veterinaria de emergencia." },
     services: [
       { id: "consulta", title: "Consulta General", description: "Evaluación clínica completa, diagnóstico y plan de tratamiento personalizado.", icon: "Stethoscope", color: "from-teal-500 to-emerald-500", priceRange: "$15 – $30 USD", illustration: "/images/services/vet-consulta.svg" },
@@ -158,6 +160,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     stats: { primaryValue: 10000, primaryLabel: "Kilos Vendidos/mes", secondaryValue: 20, secondaryLabel: "Años de Tradición", ratingValue: 4.8, ratingLabel: "Calificación Google", reviewsValue: 250, reviewsLabel: "Reseñas Reales" },
     colors: { primary: "#B91C1C", primaryDark: "#991B1B", primaryLight: "#FCA5A5", secondary: "#DC2626", secondaryDark: "#B91C1C", secondaryLight: "#FECACA", accent: "#F59E0B", accentDark: "#D97706", accentLight: "#FDE68A", emergency: "#DC2626", emergencyDark: "#991B1B" },
     logoIcon: "Beef",
+    lordiconSrc: "https://cdn.lordicon.com/puvaffet.json",
     hero: { badge: "Carnicería Premium en San Cristóbal, Táchira", headline: "La mejor carne de la ciudad con la", headlineHighlight: "calidad que mereces", subtitle: "Cortes premium, embutidos artesanales y delivery a domicilio.", ctaEmergency: "Pedir Ahora por WhatsApp", ctaEmergencyShort: "PEDIR AHORA", emergencyWhatsAppMessage: "¡Hola! 🥩 Quisiera hacer un pedido de carne. ¿Qué cortes tienen disponibles hoy?" },
     services: [
       { id: "cortes-premium", title: "Cortes Premium", description: "Solomo, lomito, punta trasera, muchacho redondo. Los mejores cortes.", icon: "Beef", color: "from-red-600 to-rose-600", priceRange: "Desde $5 USD/kg", illustration: "/images/services/carne-cortes.svg" },
@@ -204,6 +207,7 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     stats: { primaryValue: 15000, primaryLabel: "Productos en Stock", secondaryValue: 25, secondaryLabel: "Años en el Mercado", ratingValue: 4.7, ratingLabel: "Calificación Google", reviewsValue: 180, reviewsLabel: "Reseñas Reales" },
     colors: { primary: "#EA580C", primaryDark: "#C2410C", primaryLight: "#FDBA74", secondary: "#F97316", secondaryDark: "#EA580C", secondaryLight: "#FED7AA", accent: "#64748B", accentDark: "#475569", accentLight: "#CBD5E1", emergency: "#DC2626", emergencyDark: "#991B1B" },
     logoIcon: "Wrench",
+    lordiconSrc: "https://cdn.lordicon.com/wyhalxdy.json",
     hero: { badge: "Ferretería y Materiales en San Cristóbal, Táchira", headline: "Todo lo que necesitas para construir con la", headlineHighlight: "mejor calidad", subtitle: "Materiales de construcción, herramientas, fontanería, electricidad y más.", ctaEmergency: "Cotizar por WhatsApp", ctaEmergencyShort: "COTIZAR AHORA", emergencyWhatsAppMessage: "¡Hola! 🔧 Necesito una cotización de materiales de ferretería. ¿Pueden ayudarme?" },
     services: [
       { id: "materiales", title: "Materiales de Construcción", description: "Cemento, arena, piedra, bloques, cabillas. Todo para tu obra.", icon: "HardHat", color: "from-orange-500 to-amber-500", priceRange: "Desde $3 USD", illustration: "/images/services/ferre-materiales.svg" },
