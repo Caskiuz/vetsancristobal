@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Phone, CheckCircle2, Star, ShieldCheck, MapPin } from "lucide-react";
-import { LordIcon } from "@/components/ui/LordIcon";
+import { AnimatedHeroIcon } from "@/components/ui/AnimatedHeroIcon";
 import { useBusiness } from "@/lib/business-context";
 
 export function HeroSection() {
@@ -88,16 +88,14 @@ export function HeroSection() {
                 <div><p className="text-[11px] font-bold text-slate-900 dark:text-white">{b.features.hasBooking ? "Disponible Ahora" : "Pedidos Abiertos"}</p><p className="text-[9px] text-slate-500 dark:text-slate-400">Atención inmediata activa</p></div>
               </motion.div>
 
-              {/* Business Icon Hero — Animated Lordicon with emoji fallback */}
+              {/* Business Icon Hero — Animated SVG (pure React, no CDN) */}
               <div className="w-full h-full flex items-center justify-center p-2 sm:p-4">
                 <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3 }}>
-                  <LordIcon
-                    src={b.lordiconSrc}
-                    trigger="loop"
-                    colors={`primary:${b.colors.primary},secondary:${b.colors.secondary}`}
+                  <AnimatedHeroIcon
+                    variant={b.id}
                     size={120}
-                    stroke="light"
-                    fallback={<span className="text-8xl">{b.emoji}</span>}
+                    primaryColor={b.colors.primary}
+                    secondaryColor={b.colors.secondary}
                   />
                 </motion.div>
               </div>
