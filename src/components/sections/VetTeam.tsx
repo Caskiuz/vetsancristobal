@@ -10,7 +10,7 @@ export function VetTeam() {
   const cfg = useSiteConfig();
 
   return (
-    <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-white dark:bg-slate-950 min-h-screen transition-colors duration-300">
+    <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-white dark:bg-[#0B0F19] min-h-screen transition-colors duration-300">
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

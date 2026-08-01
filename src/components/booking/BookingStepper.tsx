@@ -133,7 +133,7 @@ export function BookingStepper() {
   ];
 
   return (
-    <section id="reservar" className="relative section-container bg-white dark:bg-slate-950 scroll-mt-24 transition-colors duration-300">
+    <section id="reservar" className="relative section-container bg-white dark:bg-[#0B0F19] scroll-mt-24 transition-colors duration-300">
       {/* Section Header */}
       <div className="text-center mb-12">
         <motion.span

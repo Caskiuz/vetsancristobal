@@ -50,7 +50,7 @@ export function ServicesGrid() {
   const { businessData: b } = useBusiness();
 
   return (
-    <section id="servicios" className="relative section-container bg-white dark:bg-slate-950 transition-colors duration-300">
+    <section id="servicios" className="relative section-container bg-white dark:bg-[#0B0F19] transition-colors duration-300">
       <div className="text-center mb-14">
         <motion.span initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="inline-block text-sm font-bold uppercase tracking-widest mb-3" style={{ color: b.colors.primary }}>

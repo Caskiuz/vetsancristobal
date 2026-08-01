@@ -10,7 +10,7 @@ export function HeroSection() {
   const emergencyWhatsAppUrl = `https://wa.me/${b.phone.replace(/\D/g, "")}?text=${encodeURIComponent(b.hero.emergencyWhatsAppMessage)}`;
 
   return (
-    <section className="relative min-h-[100svh] pt-24 pb-12 sm:pt-32 sm:pb-20 overflow-hidden flex items-center bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+    <section className="relative min-h-[100svh] pt-24 pb-12 sm:pt-32 sm:pb-20 overflow-hidden flex items-center bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-white transition-colors duration-300">
       {/* Background SVG Image */}
       <div className="absolute inset-0 pointer-events-none opacity-70 dark:opacity-40 z-0">
         <img
@@ -20,7 +20,7 @@ export function HeroSection() {
           aria-hidden="true"
         />
       </div>
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none z-0" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full blur-[150px] pointer-events-none z-0" style={{ backgroundColor: `${b.colors.primary}08` }} />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0" style={{ backgroundColor: `${b.colors.secondary}06` }} />
       <motion.div animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full" style={{ backgroundColor: b.colors.primaryLight }} />

@@ -167,7 +167,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-950">
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0B0F19]">
         <div className="text-center">
           <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-4">404</h1>
           <p className="text-slate-500 dark:text-slate-400 mb-6">Artículo no encontrado</p>
@@ -178,7 +178,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   return (
-    <article className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300 pt-28 pb-20">
+    <article className="min-h-screen bg-white dark:bg-[#0B0F19] transition-colors duration-300 pt-28 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-500 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors mb-6">
           <ArrowLeft className="w-4 h-4" /> Volver al Blog

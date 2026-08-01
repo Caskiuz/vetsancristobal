@@ -43,42 +43,42 @@
   --grid-pattern-opacity: 0.04;
 }
 
-/* ========== DARK MODE ========== */
+/* ========== DARK MODE (Professional) ========== */
 .dark {
-  --bg-primary: #0F172A;
-  --bg-secondary: #1E293B;
-  --bg-tertiary: #1E293B;
-  --bg-card: #1E293B;
-  --bg-card-hover: #1E293B;
-  --bg-glass: rgba(15, 23, 42, 0.75);
-  --bg-input: #1E293B;
-  --bg-nav: rgba(15, 23, 42, 0.9);
+  --bg-primary: #0B0F19;
+  --bg-secondary: #131A2A;
+  --bg-tertiary: #1A2332;
+  --bg-card: #131A2A;
+  --bg-card-hover: #1A2332;
+  --bg-glass: rgba(11, 15, 25, 0.85);
+  --bg-input: #1A2332;
+  --bg-nav: rgba(11, 15, 25, 0.92);
 
   --text-primary: #F1F5F9;
   --text-secondary: #CBD5E1;
   --text-muted: #94A3B8;
-  --text-inverse: #0F172A;
+  --text-inverse: #0B0F19;
 
-  --border-default: #334155;
-  --border-muted: #1E293B;
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-muted: rgba(255, 255, 255, 0.04);
 
   --accent-primary: #14B8A6;
   --accent-secondary: #5EEAD4;
-  --accent-glow: rgba(20, 184, 166, 0.12);
+  --accent-glow: rgba(20, 184, 166, 0.10);
 
-  --emergency: #EF4444;
-  --emergency-light: rgba(239, 68, 68, 0.15);
+  --emergency: #DC2626;
+  --emergency-light: rgba(220, 38, 38, 0.12);
 
-  --gradient-hero: radial-gradient(ellipse at top, rgba(20,184,166,0.15), transparent 50%);
-  --gradient-card: linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.95));
-  --gradient-section: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(20,184,166,0.08), transparent 60%);
+  --gradient-card: linear-gradient(135deg, #131A2A 0%, #0B0F19 100%);
+  --gradient-section: linear-gradient(180deg, #0B0F19 0%, #0F1623 50%, #0B0F19 100%);
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.3);
-  --shadow-glow: 0 0 30px rgba(20, 184, 166, 0.15);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.6), 0 4px 10px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 30px rgba(20, 184, 166, 0.08);
 
-  --grid-pattern-opacity: 0.4;
+  --grid-pattern-opacity: 0.04;
 }
 
 /* ========== BASE ========== */
@@ -211,13 +211,13 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background: #DC2626;
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
     color: white;
     font-weight: 700;
     font-size: 0.875rem;
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    border: 1px solid rgba(239, 68, 68, 0.3);
     box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -225,9 +225,19 @@
   }
 
   .btn-emergency:hover {
-    background: #B91C1C;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+  }
+
+  .dark .btn-emergency {
+    background: linear-gradient(135deg, #991B1B 0%, #B91C1C 100%);
+    border-color: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+  }
+
+  .dark .btn-emergency:hover {
+    background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 100%);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.25);
   }
 
   .btn-outline {
@@ -368,10 +378,15 @@
 @layer utilities {
   .bg-grid-pattern {
     background-image:
-      linear-gradient(var(--border-default) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border-default) 1px, transparent 1px);
+      linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
     background-size: 60px 60px;
-    opacity: var(--grid-pattern-opacity);
+  }
+
+  .dark .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   }
 
   .bg-section-gradient {

@@ -171,7 +171,7 @@ export function ChatDialog({
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50 dark:bg-slate-950">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50 dark:bg-[#0B0F19]">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -220,7 +220,7 @@ export function ChatDialog({
 
           {/* Suggested Questions */}
           {messages.length <= 1 && (
-            <div className="px-4 pt-2 pb-1 flex-shrink-0 bg-slate-50 dark:bg-slate-950">
+            <div className="px-4 pt-2 pb-1 flex-shrink-0 bg-slate-50 dark:bg-[#0B0F19]">
               <div className="flex flex-wrap gap-1.5">
                 {SUGGESTED_QUESTIONS.map((question) => (
                   <button

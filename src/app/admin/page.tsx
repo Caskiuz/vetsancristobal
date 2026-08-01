@@ -129,7 +129,7 @@ function Dashboard({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-100 dark:bg-[#0B0F19] transition-colors duration-300">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 px-4 py-3">
         <div className="max-w-6xl mx-auto flex items-center justify-between">

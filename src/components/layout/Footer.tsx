@@ -23,7 +23,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/60 pt-16 lg:pt-20 overflow-hidden transition-colors duration-300">
+    <footer className="relative bg-slate-50 dark:bg-[#0B0F19] border-t border-slate-200 dark:border-slate-800/60 pt-16 lg:pt-20 overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-slate-200 dark:border-slate-800/60">
