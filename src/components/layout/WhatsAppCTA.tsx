@@ -2,14 +2,16 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, Sparkles } from "lucide-react";
 import { createWhatsAppUrl } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
+import { ChatDialog } from "@/components/chat/ChatDialog";
 
 export function WhatsAppCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
   const [showDialog, setShowDialog] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 1500);
@@ -137,12 +139,46 @@ export function WhatsAppCTA() {
             )}
           </AnimatePresence>
 
+          {/* Chat IA Dialog */}
+          <AnimatePresence>
+            {showChat && (
+              <div className="absolute bottom-full right-0 mb-2">
+                <ChatDialog isOpen={showChat} onClose={() => setShowChat(false)} />
+              </div>
+            )}
+          </AnimatePresence>
+
+          {/* Botones flotantes */}
+          {showDialog && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 10 }}
+              onClick={() => {
+                setShowDialog(false);
+                setShowChat(true);
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-shadow"
+              aria-label="Hablar con IA VetBot"
+            >
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+            </motion.button>
+          )}
+
           <motion.button
-            onClick={() => setShowDialog(!showDialog)}
+            onClick={() => {
+              if (showChat) {
+                setShowChat(false);
+              } else {
+                setShowDialog(!showDialog);
+              }
+            }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             animate={
-              showDialog
+              showDialog || showChat
                 ? { rotate: 0 }
                 : {
                     boxShadow: [
@@ -154,9 +190,13 @@ export function WhatsAppCTA() {
             }
             transition={{ boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
             className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-shadow"
-            aria-label="Contactar por WhatsApp"
+            aria-label="Abrir opciones de contacto"
           >
-            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            {showDialog || showChat ? (
+              <X className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            ) : (
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            )}
           </motion.button>
         </div>
       )}
