@@ -7,6 +7,7 @@ import { BusinessProvider } from "@/lib/business-context";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/layout/WhatsAppCTA";
+import { DynamicTitle } from "@/components/layout/DynamicTitle";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -97,6 +98,7 @@ export default function RootLayout({
         <ThemeProvider>
           <BusinessProvider>
           <AdminProvider>
+            <DynamicTitle />
             <Navbar />
             <main>{children}</main>
             <Footer />
