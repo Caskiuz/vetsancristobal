@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <!-- Stethoscope -->
+  <g stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9">
+    <!-- Earpieces -->
+    <path d="M55 40c-5-8-3-18 4-22s16-2 20 6" stroke-width="3.5"/>
+    <path d="M145 40c5-8 3-18-4-22s-16-2-20 6" stroke-width="3.5"/>
+    <circle cx="54" cy="44" r="5" fill="#0D9488" fill-opacity="0.2"/>
+    <circle cx="146" cy="44" r="5" fill="#0D9488" fill-opacity="0.2"/>
+    <!-- Tube -->
+    <path d="M54 50c-10 10-10 80 40 90" stroke-width="2.8"/>
+    <path d="M146 50c10 10 10 80-40 90" stroke-width="2.8"/>
+    <!-- Chest piece -->
+    <circle cx="100" cy="155" r="18" stroke-width="3"/>
+    <circle cx="100" cy="155" r="10" stroke-width="2" opacity="0.5"/>
+  </g>
+  <!-- Heart in center of chest piece -->
+  <path d="M100 150c-4-6-10-6-12-2s2 10 12 16c10-6 14-12 12-16s-8-4-12 2z" fill="#DC2626" opacity="0.7"/>
+  <!-- Paw prints decorative -->
+  <g opacity="0.2">
+    <circle cx="35" cy="170" r="4" fill="#0D9488"/>
+    <circle cx="30" cy="162" r="3" fill="#0D9488"/>
+    <circle cx="40" cy="162" r="3" fill="#0D9488"/>
+    <ellipse cx="35" cy="178" rx="3" ry="4" fill="#0D9488"/>
+    <circle cx="165" cy="170" r="4" fill="#0D9488"/>
+    <circle cx="160" cy="162" r="3" fill="#0D9488"/>
+    <circle cx="170" cy="162" r="3" fill="#0D9488"/>
+    <ellipse cx="165" cy="178" rx="3" ry="4" fill="#0D9488"/>
+  </g>
+</svg>

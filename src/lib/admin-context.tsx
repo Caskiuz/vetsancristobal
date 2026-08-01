@@ -37,6 +37,7 @@ export interface Service {
   icon: string;
   color: string;
   priceRange: string;
+  illustration?: string;
 }
 
 export interface Vet {

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EA580C"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient></defs>
+  <!-- Grill -->
+  <g opacity="0.9">
+    <!-- Grill legs -->
+    <line x1="55" y1="130" x2="45" y2="170" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+    <line x1="145" y1="130" x2="155" y2="170" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+    <!-- Grill body -->
+    <ellipse cx="100" cy="130" rx="55" ry="12" fill="#1F2937" opacity="0.9"/>
+    <rect x="45" y="110" width="110" height="22" rx="5" fill="#374151" opacity="0.9"/>
+    <!-- Grill grates -->
+    <line x1="55" y1="115" x2="145" y2="115" stroke="#6B7280" stroke-width="2" opacity="0.8"/>
+    <line x1="55" y1="121" x2="145" y2="121" stroke="#6B7280" stroke-width="2" opacity="0.8"/>
+    <line x1="55" y1="127" x2="145" y2="127" stroke="#6B7280" stroke-width="2" opacity="0.8"/>
+  </g>
+  <!-- Meat pieces on grill -->
+  <g opacity="0.85">
+    <!-- Steak -->
+    <ellipse cx="80" cy="110" rx="18" ry="10" fill="#B91C1C" opacity="0.9"/>
+    <!-- Sausage -->
+    <rect x="100" y="104" width="25" height="8" rx="4" fill="#DC2626" opacity="0.9" transform="rotate(-15 112 108)"/>
+    <!-- Chicken piece -->
+    <ellipse cx="125" cy="108" rx="14" ry="8" fill="#F59E0B" opacity="0.8" transform="rotate(10 125 108)"/>
+  </g>
+  <!-- Fire/flame below -->
+  <g opacity="0.6">
+    <path d="M75 135c-5-10 2-20 8-15s4 15 0 20" fill="#F97316" opacity="0.8"/>
+    <path d="M95 135c-5-12 3-22 10-16s4 16 0 22" fill="#F59E0B" opacity="0.8"/>
+    <path d="M115 135c-4-8 2-18 8-14s3 14 0 18" fill="#F97316" opacity="0.7"/>
+  </g>
+  <!-- Tongs -->
+  <g opacity="0.7" transform="translate(145, 70) rotate(45)">
+    <path d="M0 0 L-5 30 L-2 40" stroke="#6B7280" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M6 0 L11 30 L8 40" stroke="#6B7280" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Smoke wisps -->
+  <g opacity="0.15">
+    <path d="M70 95c-3-8-5-20-2-28" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M100 90c0-10 3-25 8-30" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

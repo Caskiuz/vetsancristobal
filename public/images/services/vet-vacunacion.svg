@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#4F46E5"/></linearGradient></defs>
+  <!-- Syringe -->
+  <g opacity="0.9">
+    <rect x="94" y="40" width="12" height="80" rx="4" fill="#2563EB" opacity="0.8"/>
+    <rect x="97" y="45" width="6" height="70" rx="2" fill="#60A5FA" opacity="0.5"/>
+    <!-- Plunger -->
+    <rect x="95" y="35" width="10" height="12" rx="3" fill="#4F46E5" opacity="0.9"/>
+    <line x1="100" y1="30" x2="100" y2="35" stroke="#4F46E5" stroke-width="3" stroke-linecap="round"/>
+    <!-- Needle -->
+    <rect x="98" y="120" width="4" height="18" rx="1" fill="#93C5FD" opacity="0.9"/>
+    <line x1="100" y1="138" x2="100" y2="148" stroke="#93C5FD" stroke-width="1.5"/>
+    <!-- Liquid drop -->
+    <path d="M100 150c0-6 4-8 6-4s4 8 0 12-6 2-6-8z" fill="#60A5FA" opacity="0.7"/>
+  </g>
+  <!-- Shield / protection -->
+  <g opacity="0.7">
+    <path d="M100 68c-20-15-40-10-50 0v40c0 30 50 55 50 55s50-25 50-55V68c-10-10-30-15-50 0z" stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M80 105l12 12 28-28" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Small decorative crosses -->
+  <g opacity="0.2">
+    <g transform="translate(45, 160)"><rect x="-3" y="-10" width="6" height="20" rx="2" fill="#2563EB"/><rect x="-10" y="-3" width="20" height="6" rx="2" fill="#2563EB"/></g>
+    <g transform="translate(155, 160)"><rect x="-3" y="-10" width="6" height="20" rx="2" fill="#2563EB"/><rect x="-10" y="-3" width="20" height="6" rx="2" fill="#2563EB"/></g>
+  </g>
+</svg>

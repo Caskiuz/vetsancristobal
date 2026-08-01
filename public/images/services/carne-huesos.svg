@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#64748B"/><stop offset="100%" stop-color="#94A3B8"/></linearGradient></defs>
+  <!-- Bone -->
+  <g opacity="0.85">
+    <rect x="45" y="80" width="110" height="14" rx="4" fill="#CBD5E1" opacity="0.8"/>
+    <circle cx="50" cy="80" r="14" fill="#CBD5E1" opacity="0.8"/>
+    <circle cx="50" cy="94" r="14" fill="#CBD5E1" opacity="0.8"/>
+    <circle cx="150" cy="80" r="14" fill="#CBD5E1" opacity="0.8"/>
+    <circle cx="150" cy="94" r="14" fill="#CBD5E1" opacity="0.8"/>
+    <!-- Bone inner detail -->
+    <circle cx="50" cy="80" r="8" fill="#F1F5F9" opacity="0.5"/>
+    <circle cx="50" cy="94" r="8" fill="#F1F5F9" opacity="0.5"/>
+    <circle cx="150" cy="80" r="8" fill="#F1F5F9" opacity="0.5"/>
+    <circle cx="150" cy="94" r="8" fill="#F1F5F9" opacity="0.5"/>
+  </g>
+  <!-- Dog silhouette happy -->
+  <g opacity="0.6" transform="translate(100, 140)">
+    <ellipse cx="0" cy="10" rx="22" ry="16" fill="#94A3B8"/>
+    <circle cx="-18" cy="0" r="13" fill="#94A3B8"/>
+    <ellipse cx="-28" cy="-3" rx="7" ry="5" fill="#94A3B8" transform="rotate(-20 -28 -3)"/>
+    <ellipse cx="-6" cy="20" rx="8" ry="4" fill="#94A3B8"/>
+    <ellipse cx="6" cy="20" rx="8" ry="4" fill="#94A3B8"/>
+    <!-- Tail -->
+    <path d="M20 0c10-8 18-5 22 2" stroke="#94A3B8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Eye -->
+    <circle cx="-22" cy="-2" r="2" fill="#fff" opacity="0.8"/>
+  </g>
+  <!-- Heart -->
+  <g opacity="0.4">
+    <path d="M135 130c-2-4-6-4-8-1s2 7 8 11c6-4 10-8 8-11s-6-3-8 1z" fill="#DC2626"/>
+  </g>
+</svg>

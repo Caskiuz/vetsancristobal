@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B91C1C"/><stop offset="100%" stop-color="#DC2626"/></linearGradient></defs>
+  <!-- Meat cuts board -->
+  <g opacity="0.85">
+    <!-- Cutting board -->
+    <rect x="35" y="120" width="130" height="14" rx="5" fill="#78350F" opacity="0.5"/>
+    <rect x="30" y="130" width="140" height="6" rx="2" fill="#451A03" opacity="0.4"/>
+    <!-- Steak 1 -->
+    <ellipse cx="80" cy="90" rx="30" ry="22" fill="#B91C1C" opacity="0.8"/>
+    <path d="M65 85 L95 78" stroke="#FCA5A5" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="65" cy="82" rx="8" ry="5" fill="#991B1B" opacity="0.6"/>
+    <!-- Bone detail -->
+    <path d="M82 95c3-5 8-8 14-5" stroke="#FECACA" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <!-- Steak 2 -->
+    <ellipse cx="125" cy="88" rx="25" ry="20" fill="#DC2626" opacity="0.75" transform="rotate(-10 125 88)"/>
+    <ellipse cx="115" cy="80" rx="7" ry="5" fill="#991B1B" opacity="0.5" transform="rotate(-10 115 80)"/>
+    <!-- Knife -->
+    <g transform="translate(135, 40) rotate(-30)">
+      <rect x="0" y="0" width="8" height="45" rx="2" fill="#94A3B8" opacity="0.9"/>
+      <rect x="2" y="2" width="4" height="40" rx="1" fill="#CBD5E1" opacity="0.6"/>
+      <rect x="3" y="45" width="2" height="12" rx="1" fill="#F59E0B" opacity="0.8"/>
+    </g>
+    <!-- Marbling lines -->
+    <g opacity="0.25">
+      <path d="M85 95c5-3 10-4 12 0" stroke="#fff" stroke-width="1" fill="none"/>
+      <path d="M90 80c3 5 5 8 2 10" stroke="#fff" stroke-width="1" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -67,6 +67,7 @@ export interface BusinessTemplate {
     icon: string;
     color: string;
     priceRange: string;
+    illustration: string;
   }[];
   team: {
     name: string;
@@ -112,12 +113,12 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     logoIcon: "Stethoscope",
     hero: { badge: "Atención Veterinaria Avanzada en San Cristóbal, Táchira", headline: "Cuidamos a tu mascota con la", headlineHighlight: "precisión médica", subtitle: "Desde consultas preventivas hasta cirugías complejas y urgencias 24 horas.", ctaEmergency: "WhatsApp Emergencia (24/7)", ctaEmergencyShort: "WHATSAPP EMERGENCIA", emergencyWhatsAppMessage: "¡URGENTE! 🚨 Necesito atención veterinaria de emergencia." },
     services: [
-      { id: "consulta", title: "Consulta General", description: "Evaluación clínica completa, diagnóstico y plan de tratamiento personalizado.", icon: "Stethoscope", color: "from-teal-500 to-emerald-500", priceRange: "$15 – $30 USD" },
-      { id: "cirugia", title: "Cirugía", description: "Procedimientos quirúrgicos con equipo de anestesia monitoreada.", icon: "Bone", color: "from-cyan-500 to-blue-500", priceRange: "$80 – $350 USD" },
-      { id: "peluqueria", title: "Peluquería Canina", description: "Baño medicado, corte de pelo, limpieza de oídos.", icon: "Scissors", color: "from-purple-500 to-pink-500", priceRange: "$10 – $25 USD" },
-      { id: "laboratorio", title: "Laboratorio Clínico", description: "Análisis de sangre, orina, heces. Resultados en 24h.", icon: "Microscope", color: "from-amber-500 to-orange-500", priceRange: "$8 – $60 USD" },
-      { id: "exoticos", title: "Animales Exóticos", description: "Atención para aves, reptiles, conejos y hurones.", icon: "Bird", color: "from-emerald-500 to-teal-500", priceRange: "$20 – $50 USD" },
-      { id: "vacunacion", title: "Vacunación", description: "Plan de inmunización completo. Cartilla digital.", icon: "Syringe", color: "from-blue-500 to-indigo-500", priceRange: "$10 – $35 USD" },
+      { id: "consulta", title: "Consulta General", description: "Evaluación clínica completa, diagnóstico y plan de tratamiento personalizado.", icon: "Stethoscope", color: "from-teal-500 to-emerald-500", priceRange: "$15 – $30 USD", illustration: "/images/services/vet-consulta.svg" },
+      { id: "cirugia", title: "Cirugía", description: "Procedimientos quirúrgicos con equipo de anestesia monitoreada.", icon: "Bone", color: "from-cyan-500 to-blue-500", priceRange: "$80 – $350 USD", illustration: "/images/services/vet-cirugia.svg" },
+      { id: "peluqueria", title: "Peluquería Canina", description: "Baño medicado, corte de pelo, limpieza de oídos.", icon: "Scissors", color: "from-purple-500 to-pink-500", priceRange: "$10 – $25 USD", illustration: "/images/services/vet-peluqueria.svg" },
+      { id: "laboratorio", title: "Laboratorio Clínico", description: "Análisis de sangre, orina, heces. Resultados en 24h.", icon: "Microscope", color: "from-amber-500 to-orange-500", priceRange: "$8 – $60 USD", illustration: "/images/services/vet-laboratorio.svg" },
+      { id: "exoticos", title: "Animales Exóticos", description: "Atención para aves, reptiles, conejos y hurones.", icon: "Bird", color: "from-emerald-500 to-teal-500", priceRange: "$20 – $50 USD", illustration: "/images/services/vet-exoticos.svg" },
+      { id: "vacunacion", title: "Vacunación", description: "Plan de inmunización completo. Cartilla digital.", icon: "Syringe", color: "from-blue-500 to-indigo-500", priceRange: "$10 – $35 USD", illustration: "/images/services/vet-vacunacion.svg" },
     ],
     team: [
       { name: "Dra. María Gabriela Rojas", role: "Directora Médica", specialty: "Medicina Interna y Cirugía", education: "Universidad de Los Andes (ULA)", experience: "15 años de experiencia", certifications: ["Fear Free Certified", "AAHA Member"] },
@@ -159,12 +160,12 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     logoIcon: "Beef",
     hero: { badge: "Carnicería Premium en San Cristóbal, Táchira", headline: "La mejor carne de la ciudad con la", headlineHighlight: "calidad que mereces", subtitle: "Cortes premium, embutidos artesanales y delivery a domicilio.", ctaEmergency: "Pedir Ahora por WhatsApp", ctaEmergencyShort: "PEDIR AHORA", emergencyWhatsAppMessage: "¡Hola! 🥩 Quisiera hacer un pedido de carne. ¿Qué cortes tienen disponibles hoy?" },
     services: [
-      { id: "cortes-premium", title: "Cortes Premium", description: "Solomo, lomito, punta trasera, muchacho redondo. Los mejores cortes.", icon: "Beef", color: "from-red-600 to-rose-600", priceRange: "Desde $5 USD/kg" },
-      { id: "embutidos", title: "Embutidos Artesanales", description: "Chorizo, morcilla, salchichón. Elaboración propia sin conservantes.", icon: "ChefHat", color: "from-orange-500 to-amber-500", priceRange: "Desde $3 USD" },
-      { id: "delivery", title: "Delivery a Domicilio", description: "Pedidos por WhatsApp. Entrega en menos de 45 min en San Cristóbal.", icon: "Truck", color: "from-red-500 to-orange-500", priceRange: "Delivery gratis +$20" },
-      { id: "bbq-pack", title: "BBQ Packs", description: "Combos para parrilla: mix de cortes, chorizos, aliños y carbón.", icon: "Flame", color: "from-amber-500 to-yellow-500", priceRange: "Desde $25 USD" },
-      { id: "huesos-mascotas", title: "Huesos para Mascotas", description: "Huesos frescos carnosos para perros. Sin cocinar, 100% naturales.", icon: "Bone", color: "from-slate-500 to-gray-500", priceRange: "Desde $2 USD" },
-      { id: "marinados", title: "Carnes Marinadas", description: "Pollo, cerdo y res sazonados listos para cocinar.", icon: "ChefHat", color: "from-emerald-500 to-green-500", priceRange: "Desde $6 USD/kg" },
+      { id: "cortes-premium", title: "Cortes Premium", description: "Solomo, lomito, punta trasera, muchacho redondo. Los mejores cortes.", icon: "Beef", color: "from-red-600 to-rose-600", priceRange: "Desde $5 USD/kg", illustration: "/images/services/carne-cortes.svg" },
+      { id: "embutidos", title: "Embutidos Artesanales", description: "Chorizo, morcilla, salchichón. Elaboración propia sin conservantes.", icon: "ChefHat", color: "from-orange-500 to-amber-500", priceRange: "Desde $3 USD", illustration: "/images/services/carne-embutidos.svg" },
+      { id: "delivery", title: "Delivery a Domicilio", description: "Pedidos por WhatsApp. Entrega en menos de 45 min en San Cristóbal.", icon: "Truck", color: "from-red-500 to-orange-500", priceRange: "Delivery gratis +$20", illustration: "/images/services/carne-delivery.svg" },
+      { id: "bbq-pack", title: "BBQ Packs", description: "Combos para parrilla: mix de cortes, chorizos, aliños y carbón.", icon: "Flame", color: "from-amber-500 to-yellow-500", priceRange: "Desde $25 USD", illustration: "/images/services/carne-bbq.svg" },
+      { id: "huesos-mascotas", title: "Huesos para Mascotas", description: "Huesos frescos carnosos para perros. Sin cocinar, 100% naturales.", icon: "Bone", color: "from-slate-500 to-gray-500", priceRange: "Desde $2 USD", illustration: "/images/services/carne-huesos.svg" },
+      { id: "marinados", title: "Carnes Marinadas", description: "Pollo, cerdo y res sazonados listos para cocinar.", icon: "ChefHat", color: "from-emerald-500 to-green-500", priceRange: "Desde $6 USD/kg", illustration: "/images/services/carne-marinados.svg" },
     ],
     team: [
       { name: "Don Ramón Contreras", role: "Maestro Carnicero", specialty: "Cortes Premium de Res", education: "30 años en el Mercado Municipal", experience: "30 años de experiencia", certifications: ["Tradición Familiar", "Higiene Certificada"] },
@@ -205,12 +206,12 @@ const businessTemplates: Record<BusinessId, BusinessTemplate> = {
     logoIcon: "Wrench",
     hero: { badge: "Ferretería y Materiales en San Cristóbal, Táchira", headline: "Todo lo que necesitas para construir con la", headlineHighlight: "mejor calidad", subtitle: "Materiales de construcción, herramientas, fontanería, electricidad y más.", ctaEmergency: "Cotizar por WhatsApp", ctaEmergencyShort: "COTIZAR AHORA", emergencyWhatsAppMessage: "¡Hola! 🔧 Necesito una cotización de materiales de ferretería. ¿Pueden ayudarme?" },
     services: [
-      { id: "materiales", title: "Materiales de Construcción", description: "Cemento, arena, piedra, bloques, cabillas. Todo para tu obra.", icon: "HardHat", color: "from-orange-500 to-amber-500", priceRange: "Desde $3 USD" },
-      { id: "herramientas", title: "Herramientas", description: "Martillos, taladros, sierras, destornilladores. Marcas líderes.", icon: "Wrench", color: "from-slate-500 to-gray-500", priceRange: "Desde $5 USD" },
-      { id: "fontaneria", title: "Fontanería", description: "Tuberías PVC, llaves, grifería, pegamento. Todo para plomería.", icon: "Droplets", color: "from-blue-500 to-cyan-500", priceRange: "Desde $2 USD" },
-      { id: "electricidad", title: "Electricidad", description: "Cables, tomacorrientes, breaker, bombillos. Material eléctrico.", icon: "Zap", color: "from-yellow-500 to-amber-500", priceRange: "Desde $1 USD" },
-      { id: "pintura", title: "Pinturas y Acabados", description: "Pintura de interior, exterior, esmaltes, brochas y rodillos.", icon: "PaintBucket", color: "from-purple-500 to-pink-500", priceRange: "Desde $10 USD/galón" },
-      { id: "cerrajeria", title: "Cerrajería", description: "Cerraduras, candados, bisagras. Seguridad para tu hogar.", icon: "Lock", color: "from-zinc-500 to-slate-500", priceRange: "Desde $8 USD" },
+      { id: "materiales", title: "Materiales de Construcción", description: "Cemento, arena, piedra, bloques, cabillas. Todo para tu obra.", icon: "HardHat", color: "from-orange-500 to-amber-500", priceRange: "Desde $3 USD", illustration: "/images/services/ferre-materiales.svg" },
+      { id: "herramientas", title: "Herramientas", description: "Martillos, taladros, sierras, destornilladores. Marcas líderes.", icon: "Wrench", color: "from-slate-500 to-gray-500", priceRange: "Desde $5 USD", illustration: "/images/services/ferre-herramientas.svg" },
+      { id: "fontaneria", title: "Fontanería", description: "Tuberías PVC, llaves, grifería, pegamento. Todo para plomería.", icon: "Droplets", color: "from-blue-500 to-cyan-500", priceRange: "Desde $2 USD", illustration: "/images/services/ferre-fontaneria.svg" },
+      { id: "electricidad", title: "Electricidad", description: "Cables, tomacorrientes, breaker, bombillos. Material eléctrico.", icon: "Zap", color: "from-yellow-500 to-amber-500", priceRange: "Desde $1 USD", illustration: "/images/services/ferre-electricidad.svg" },
+      { id: "pintura", title: "Pinturas y Acabados", description: "Pintura de interior, exterior, esmaltes, brochas y rodillos.", icon: "PaintBucket", color: "from-purple-500 to-pink-500", priceRange: "Desde $10 USD/galón", illustration: "/images/services/ferre-pintura.svg" },
+      { id: "cerrajeria", title: "Cerrajería", description: "Cerraduras, candados, bisagras. Seguridad para tu hogar.", icon: "Lock", color: "from-zinc-500 to-slate-500", priceRange: "Desde $8 USD", illustration: "/images/services/ferre-cerrajeria.svg" },
     ],
     team: [
       { name: "Ing. José Gregorio Molina", role: "Gerente General", specialty: "Materiales de Construcción", education: "Universidad del Táchira (UNET)", experience: "25 años de experiencia", certifications: ["Ingeniero Civil", "Gestión de Obras"] },

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" opacity="0.15"/>
+  <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#475569"/><stop offset="100%" stop-color="#64748B"/></linearGradient></defs>
+  <!-- Wrench -->
+  <g opacity="0.85" transform="rotate(-25 100 100)">
+    <rect x="90" y="40" width="12" height="70" rx="4" fill="#64748B" opacity="0.9"/>
+    <path d="M78 45c-8-8-8-18 0-24s16-6 20 2" stroke="#64748B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M110 100c8-8 8-18 0-24s-16-6-20 2" stroke="#64748B" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Hammer -->
+  <g opacity="0.8" transform="translate(40, 130) rotate(-40)">
+    <rect x="0" y="0" width="28" height="12" rx="3" fill="#475569"/>
+    <rect x="12" y="-30" width="4" height="32" rx="2" fill="#78350F"/>
+  </g>
+  <!-- Screwdriver -->
+  <g opacity="0.7" transform="translate(140, 140) rotate(50)">
+    <rect x="0" y="0" width="6" height="40" rx="2" fill="#F97316"/>
+    <rect x="2" y="-15" width="2" height="18" rx="1" fill="#CBD5E1"/>
+  </g>
+  <!-- Drill -->
+  <g opacity="0.7" transform="translate(50, 70)">
+    <rect x="0" y="0" width="30" height="22" rx="5" fill="#475569"/>
+    <rect x="30" y="7" width="15" height="8" rx="2" fill="#64748B"/>
+    <circle cx="8" cy="11" r="6" fill="none" stroke="#1F2937" stroke-width="2"/>
+  </g>
+  <!-- Measuring tape -->
+  <g opacity="0.5">
+    <circle cx="100" cy="155" r="18" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    <rect x="95" y="155" width="10" height="15" rx="2" fill="#F59E0B" opacity="0.8"/>
+    <path d="M118 155c0-10 8-15 15-12" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>

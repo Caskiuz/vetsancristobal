@@ -82,16 +82,22 @@ export function ServicesGrid() {
               whileHover={{ y: -6 }}
               className="glass-card-hover group cursor-pointer p-6 sm:p-7 flex flex-col"
             >
-              {/* Icon */}
-              <div
-                className={cn(
-                  "w-14 h-14 rounded-2xl bg-gradient-to-br flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300",
-                  service.color
-                )}
-              >
-                {IconComponent && (
-                  <IconComponent className="w-6 h-6 text-white" />
-                )}
+              {/* Illustration */}
+              <div className="mb-5 flex justify-center">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  {service.illustration ? (
+                    <img
+                      src={service.illustration}
+                      alt={service.title}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className={cn("w-full h-full bg-gradient-to-br flex items-center justify-center", service.color)}>
+                      {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Content */}

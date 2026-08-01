@@ -66,6 +66,7 @@ export function useSiteServices(): Service[] {
     icon: s.icon,
     color: s.color,
     priceRange: s.priceRange,
+    illustration: s.illustration,
   }));
 }
 
