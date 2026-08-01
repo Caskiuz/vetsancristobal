@@ -40,7 +40,7 @@ export function HeroSection() {
               className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08] px-2 sm:px-0">
               {b.hero.headline}{" "}
               <span style={{ 
-                background: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, 
+                backgroundImage: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, 
                 WebkitBackgroundClip: "text", 
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text"

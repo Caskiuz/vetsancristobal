@@ -58,9 +58,9 @@ export function ServicesGrid() {
         </motion.span>
         <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
           className="section-title text-slate-900 dark:text-white">
-          {b.id === "veterinaria" ? (<>Todo el cuidado que tu <span style={{ background: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>mascota necesita</span></>)
-            : b.id === "carniceria" ? (<>La mejor <span style={{ background: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>carne de la ciudad</span></>)
-            : (<>Todo lo que necesitas para <span style={{ background: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>construir</span></>)}
+          {b.id === "veterinaria" ? (<>Todo el cuidado que tu <span style={{ backgroundImage: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>mascota necesita</span></>)
+            : b.id === "carniceria" ? (<>La mejor <span style={{ backgroundImage: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>carne de la ciudad</span></>)
+            : (<>Todo lo que necesitas para <span style={{ backgroundImage: `linear-gradient(135deg, ${b.colors.primaryDark} 0%, ${b.colors.primary} 50%, ${b.colors.accent} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as React.CSSProperties}>construir</span></>)}
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
           className="section-subtitle">
