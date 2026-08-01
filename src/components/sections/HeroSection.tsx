@@ -88,7 +88,7 @@ export function HeroSection() {
                 <div><p className="text-[11px] font-bold text-slate-900 dark:text-white">{b.features.hasBooking ? "Disponible Ahora" : "Pedidos Abiertos"}</p><p className="text-[9px] text-slate-500 dark:text-slate-400">Atención inmediata activa</p></div>
               </motion.div>
 
-              {/* Business Icon Hero — Animated Lordicon */}
+              {/* Business Icon Hero — Animated Lordicon with emoji fallback */}
               <div className="w-full h-full flex items-center justify-center p-2 sm:p-4">
                 <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3 }}>
                   <LordIcon
@@ -97,6 +97,7 @@ export function HeroSection() {
                     colors={`primary:${b.colors.primary},secondary:${b.colors.secondary}`}
                     size={120}
                     stroke="light"
+                    fallback={<span className="text-8xl">{b.emoji}</span>}
                   />
                 </motion.div>
               </div>
